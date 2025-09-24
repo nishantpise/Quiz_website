@@ -1,13 +1,13 @@
 <?php
-$host = "localhost";
-$port = "5432";
-$dbname = "quiz_app";
-$user = "postgres";
-$password = "#Nishant17#";  // 👈 the same password you set in step 2
+$host = getenv('DB_HOST');
+$port = getenv('DB_PORT');
+$dbname = getenv('DB_NAME');
+$user = getenv('DB_USER');
+$pass = getenv('DB_PASS');
 
-$conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
+$conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass");
 
 if (!$conn) {
-    die("Error: Could not connect to database. " . pg_last_error());
+    die("Connection failed: " . pg_last_error());
 }
 ?>

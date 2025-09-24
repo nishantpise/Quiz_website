@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: quiz-app
+    env: php
+    plan: free
+    buildFilter:
+      paths:
+      - "**.php"
+      - "**.js"
+      - "**.css"
+    startCommand: "heroku-php-apache2"

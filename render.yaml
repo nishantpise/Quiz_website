@@ -1,6 +1,6 @@
 services:
   - type: web
     name: quiz-app
-    env: php
+    env: docker
     plan: free
-    startCommand: "heroku-php-apache2"
+    dockerfilePath: ./Dockerfile
